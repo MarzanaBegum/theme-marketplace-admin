@@ -8,8 +8,8 @@ import { useRouter } from "next/router";
 import LoadingAnimation from "../components/CustomSvg/LoadingAnimation1";
 import Meta from "../components/Shared/Meta";
 
-const adminUser = `${process.env.NEXT_PUBLIC_ADMIN_USERNAME}`;
-const adminPassword = `${process.env.NEXT_PUBLIC_ADMIN_PASSWORD}`;
+const adminUser = process.env.NEXT_PUBLIC_ADMIN_USERNAME;
+const adminPassword = process.env.NEXT_PUBLIC_ADMIN_PASSWORD;
 
 type SigninInput = {
   email: string;
@@ -39,7 +39,6 @@ function Auth() {
   const onSubmit = async (signinData: SigninInput) => {
     setError("");
     setButtonLoading(true);
-    console.log(signinData,adminPassword,adminUser)
     try {
       if (
         signinData.email !== adminUser ||
