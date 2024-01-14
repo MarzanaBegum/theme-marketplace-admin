@@ -39,6 +39,7 @@ function Auth() {
   const onSubmit = async (signinData: SigninInput) => {
     setError("");
     setButtonLoading(true);
+    console.log(signinData,adminPassword,adminUser)
     try {
       if (
         signinData.email !== adminUser ||
